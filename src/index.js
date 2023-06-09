@@ -16,9 +16,9 @@ const BookList = () => {
 const Book = () => {
     return (
         <article className={'book'}>
+            <Image/>
             <Title/>
             <Author/>
-            <Image/>
         </article>
     );
 }
@@ -26,8 +26,12 @@ const Book = () => {
 
 const Image = () => <img src="./images/cover.jpg"
                          alt="Atomic Habits" srcSet=""/>
-const Title = () => <h3>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h3>
-const Author = () => <p> James Clear</p>
+const Title = () => <h2>Atomic Habits: An Easy &
+    Proven Way to Build Good Habits & Break Bad Ones</h2>
+const Author = () => {
+    const inlineStyle = {color: '#617d98', fontSize: "0.75rem", marginTop: "0.5rem"};
+    return <h4 style={inlineStyle}> James Clear</h4>;
+}
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
