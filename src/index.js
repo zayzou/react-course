@@ -7,14 +7,20 @@ import ReactDOM from 'react-dom/client'
 // camelCase for naming attributes and properties
 // no class attribute but className 
 // must close every element  </>
-const Greeting = () => {
-    return <React.Fragment>
-        <h1 className={"sas"}>Spring is awesom e</h1>
-        <input type="text"/>
-        <h1>Hello form React</h1>
-    </React.Fragment>
-}
+// nested component
 
+
+const Greeting = () => {
+  return (
+      <>
+          <Person></Person>
+          <Message></Message>
+          <i>I will keep you updated</i>
+      </>
+  )
+}
+const Person = () => <h2>Zayzou</h2>
+const Message = () => <p>I am learning React</p>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Greeting/>)
