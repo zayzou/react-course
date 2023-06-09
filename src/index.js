@@ -1,28 +1,34 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-// JSX Rules
-// return single element always !!!
-// use <React.Fragment> ... </React.Fragment/> or <>...</>
-// camelCase for naming attributes and properties
-// no class attribute but className 
-// must close every element  </>
-// nested component
+const BookList = () => {
+    return (
+        <article>
+            <Book/>
+            <Book/>
+            <Book/>
 
-
-const Greeting = () => {
-  return (
-      <>
-          <Person></Person>
-          <Message></Message>
-          <i>I will keep you updated</i>
-      </>
-  )
+        </article>
+    )
 }
-const Person = () => <h2>Zayzou</h2>
-const Message = () => <p>I am learning React</p>
+
+const Book = () => {
+    return (
+        <div>
+            <Title/>
+            <Author/>
+            <Image/>
+        </div>
+    );
+}
+
+
+const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/81bGKUa1e0L._AC_UL900_SR900,600_.jpg" alt="" srcSet=""/>
+const Title = () => <h3>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h3>
+const Author = () => <p> James Clear</p>
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Greeting/>)
+root.render(<BookList/>)
 
 
