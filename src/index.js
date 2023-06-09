@@ -1,29 +1,31 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import './index.css'
 
 const BookList = () => {
     return (
-        <article>
+        <section className={'booklist'}>
             <Book/>
             <Book/>
             <Book/>
 
-        </article>
+        </section>
     )
 }
 
 const Book = () => {
     return (
-        <div>
+        <article className={'book'}>
             <Title/>
             <Author/>
             <Image/>
-        </div>
+        </article>
     );
 }
 
 
-const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/81bGKUa1e0L._AC_UL900_SR900,600_.jpg" alt="" srcSet=""/>
+const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/81bGKUa1e0L._AC_UL900_SR900,600_.jpg"
+                         alt="" srcSet=""/>
 const Title = () => <h3>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones</h3>
 const Author = () => <p> James Clear</p>
 
