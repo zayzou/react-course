@@ -35,11 +35,12 @@ const fun = (par1, para2) => {
 fun("software", "developer")
 const Book = (props) => {
     console.log(props)
+    const {author, title, img} = props
     return (
         <article className={'book'}>
-            <img src={props.img} alt={props.title} />
-            <h2>{props.title}</h2>
-            <h4 style={inlineStyle}> {props.author}</h4>
+            <img src={img} alt={title}/>
+            <h2>{title}</h2>
+            <h4 style={inlineStyle}> {author}</h4>
         </article>
     );
 }
