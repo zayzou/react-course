@@ -7,11 +7,13 @@ const inlineStyle = {color: '#617d98', fontSize: "0.75rem", marginTop: "0.5rem"}
 
 const books = [
     {
+        id: 1,
         author: "Atomic Habits",
         title: "James Clear",
         image: "./images/cover.jpg"
     },
     {
+        id: 2,
         author: "The 48 Laws of Power",
         title: " Robert Greene",
         image: "./images/cover2.jpg"
@@ -24,8 +26,8 @@ const BookList = () => {
         <section className={'booklist'}>
             {
                 books.map((book) => {
-                    const {image, author, title} = book;
-                    return <Book img={image} author={author} title={title}/>
+                    const {id, image, author, title} = book;
+                    return <Book key={id} img={image} author={author} title={title}/>
                 })
             }
         </section>
