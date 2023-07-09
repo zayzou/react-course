@@ -6,6 +6,20 @@ const inlineStyle = {color: '#617d98', fontSize: "0.75rem", marginTop: "0.5rem"}
 let title = "✅Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones";
 let author = <>James Clear</>;
 let image = "./images/cover.jpg"
+
+
+const book1 = {
+    author: "✅Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+    title: "James Clear",
+    image: "./images/cover.jpg"
+}
+
+const book2 = {
+    author: "The 48 Laws of Power",
+    title: " Robert Greene",
+    image: "./images/cover2.jpg"
+}
+
 const BookList = () => {
     return (
         <section className={'booklist'}>
