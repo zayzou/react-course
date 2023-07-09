@@ -5,35 +5,37 @@ import './index.css'
 const inlineStyle = {color: '#617d98', fontSize: "0.75rem", marginTop: "0.5rem"};
 
 
-const book1 = {
-    author: "Atomic Habits",
-    title: "James Clear",
-    image: "./images/cover.jpg"
-}
+const books = [
+    {
+        author: "Atomic Habits",
+        title: "James Clear",
+        image: "./images/cover.jpg"
+    },
+    {
+        author: "The 48 Laws of Power",
+        title: " Robert Greene",
+        image: "./images/cover2.jpg"
+    }
+]
+const booksList = books.map((book) => {
+    return <article className={'book'}>
+        <img src={book.image} alt={book.title}/>
+        <h2>{book.title}</h2>
+        <h4 style={inlineStyle}> {book.author}</h4>
+    </article>
 
-const book2 = {
-    author: "The 48 Laws of Power",
-    title: " Robert Greene",
-    image: "./images/cover2.jpg"
-}
+})
 
 const BookList = () => {
     return (
-        <section className={'booklist'}>
-            <Book author={book1.author} title={book1.title} img={book1.image}>
-                <p>Lorem ipsum dolor sit.</p>
-                <button>click me</button>
-            </Book>
-            <Book author={book2.author} title={book2.title} img={book2.image}/>
-
-        </section>
+        <section className={'booklist'}>{booksList}</section>
     )
 
 }
 
 const Book = (props) => {
     console.log(props)
-    const {author, title, img,children} = props
+    const {author, title, img, children} = props
     return (
         <article className={'book'}>
             <img src={img} alt={title}/>
