@@ -24,6 +24,7 @@ const books = [
 const BookList = () => {
     return (
         <section className={'booklist'}>
+            <FormEvent/>
             {
                 books.map((book) => {
                     return <Book {...book} key={book.id}/>
@@ -44,6 +45,22 @@ const Book = (props) => {
             <h4 style={inlineStyle}> {author}</h4>
         </article>
     );
+}
+
+const FormEvent = () => {
+    const handleFormInput = (event) => {
+        console.log("form form input",event.target.value)
+    }
+    const handleButtonClick = () => {
+        alert("button clicked")
+    }
+    return <section>
+        <form>
+            <label htmlFor="username">username</label>
+            <input onChange={handleFormInput} type="text" itemID='username'/>
+            <button onClick={handleButtonClick}>Submit</button>
+        </form>
+    </section>
 }
 
 
