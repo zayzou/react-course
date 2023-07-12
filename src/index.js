@@ -49,7 +49,7 @@ const Book = (props) => {
 
 const FormEvent = () => {
     const handleFormInput = (event) => {
-        console.log("form form input",event.target.value)
+        console.log("form form input", event.target.value)
     }
     const handleButtonClick = () => {
         alert("button clicked")
