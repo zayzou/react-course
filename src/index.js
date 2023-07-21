@@ -13,9 +13,7 @@ const books = [{
 
 
 const BookList = () => {
-
-    const getBook = (i) => {
-        const id = parseInt(prompt("give me book id"))
+    const getBook = (id) => {
         const book = books.find((book) => book.id === id);
         if (book !== undefined) {
             console.log(book.title)
@@ -23,6 +21,7 @@ const BookList = () => {
             console.log("Book not found")
         }
     }
+
     return (<section className={'booklist'}>
         {books.map((book) => {
             return <Book getBook={getBook} {...book} key={book.id}/>
@@ -32,12 +31,12 @@ const BookList = () => {
 }
 
 const Book = (props) => {
-    const {author, title, image, getBook} = props
+    const {author, title, image, getBook,id} = props
     // console.log(props)
     return (<article className={'book'}>
         <img src={image} alt={title}/>
         <h2>{title}</h2>
-        <button type="button" onClick={getBook}>Display value</button>
+        <button type="button" onClick={getBook(id)}>Display value</button>
         <h4 style={inlineStyle}> {author}</h4>
     </article>);
 }
