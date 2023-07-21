@@ -1,15 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-
+import {books} from "./books";
 const inlineStyle = {color: '#617d98', fontSize: "0.75rem", marginTop: "0.5rem"};
 
 
-const books = [{
-    id: 1, title: "Atomic Habits", author: "James Clear", image: "./images/cover.jpg"
-}, {
-    id: 2, title: "The 48 Laws of Power", author: " Robert Greene", image: "./images/cover2.jpg"
-}]
 
 
 const BookList = () => {
