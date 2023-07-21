@@ -22,12 +22,13 @@ const books = [
 
 
 const BookList = () => {
+    const someVelue = "This value is demonstrating prop drilling"
+    const displayValue = () => alert(someVelue);
     return (
         <section className={'booklist'}>
-
             {
                 books.map((book) => {
-                    return <Book {...book} key={book.id}/>
+                    return <Book displayValue={displayValue} {...book} key={book.id}/>
                 })
             }
         </section>
@@ -36,17 +37,13 @@ const BookList = () => {
 }
 
 const Book = (props) => {
-    const {author, title, image} = props
+    const {author, title, image, displayValue} = props
     console.log(props)
-
-
     return (
         <article className={'book'}>
             <img src={image} alt={title}/>
             <h2>{title}</h2>
-            <button type="button" onClick={() => {
-                alert(title)
-            }}>Display title
+            <button type="button" onClick={displayValue}>Display value
             </button>
             <h4 style={inlineStyle}> {author}</h4>
         </article>
