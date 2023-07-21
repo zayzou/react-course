@@ -31,12 +31,16 @@ const BookList = () => {
 }
 
 const Book = (props) => {
-    const {author, title, image, getBook,id} = props
+    const {author, title, image, getBook, id} = props
+
+    const getSingleBook = () => {
+        getBook(id)
+    }
     // console.log(props)
     return (<article className={'book'}>
         <img src={image} alt={title}/>
         <h2>{title}</h2>
-        <button type="button" onClick={getBook(id)}>Display value</button>
+        <button type="button" onClick={getSingleBook}>Display value</button>
         <h4 style={inlineStyle}> {author}</h4>
     </article>);
 }
