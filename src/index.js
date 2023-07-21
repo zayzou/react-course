@@ -51,14 +51,18 @@ const FormEvent = () => {
     const handleFormInput = (event) => {
         console.log("form form input", event.target.value)
     }
-    const handleButtonClick = () => {
+    const handleButtonClick = (event) => {
+        event.preventDefault()
         alert("button clicked")
     }
     return <section>
-        <form>
+        <form onSubmit={(event) => {
+            event.preventDefault();
+            console.log("submit form")
+        }}>
             <label htmlFor="username">username</label>
             <input onChange={handleFormInput} type="text" itemID='username'/>
-            <button onClick={handleButtonClick}>Submit</button>
+            <button type="button" onClick={handleButtonClick}>Submit</button>
         </form>
     </section>
 }
