@@ -8,14 +8,14 @@ const inlineStyle = {color: '#617d98', fontSize: "0.75rem", marginTop: "0.5rem"}
 const books = [
     {
         id: 1,
-        author: "Atomic Habits",
-        title: "James Clear",
+        title: "Atomic Habits",
+        author: "James Clear",
         image: "./images/cover.jpg"
     },
     {
         id: 2,
-        author: "The 48 Laws of Power",
-        title: " Robert Greene",
+        title: "The 48 Laws of Power",
+        author: " Robert Greene",
         image: "./images/cover2.jpg"
     }
 ]
@@ -24,7 +24,7 @@ const books = [
 const BookList = () => {
     return (
         <section className={'booklist'}>
-            <FormEvent/>
+
             {
                 books.map((book) => {
                     return <Book {...book} key={book.id}/>
@@ -38,33 +38,19 @@ const BookList = () => {
 const Book = (props) => {
     const {author, title, image} = props
     console.log(props)
+
+
     return (
         <article className={'book'}>
             <img src={image} alt={title}/>
             <h2>{title}</h2>
+            <button type="button" onClick={() => {
+                alert(title)
+            }}>Display title
+            </button>
             <h4 style={inlineStyle}> {author}</h4>
         </article>
     );
-}
-
-const FormEvent = () => {
-    const handleFormInput = (event) => {
-        console.log("form form input", event.target.value)
-    }
-    const handleButtonClick = (event) => {
-        event.preventDefault()
-        alert("button clicked")
-    }
-    return <section>
-        <form onSubmit={(event) => {
-            event.preventDefault();
-            console.log("submit form")
-        }}>
-            <label htmlFor="username">username</label>
-            <input onChange={handleFormInput} type="text" itemID='username'/>
-            <button type="button" onClick={handleButtonClick}>Submit</button>
-        </form>
-    </section>
 }
 
 
