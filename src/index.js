@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import {books} from "./books";
 import {Book} from "./Book";
+import {Title} from "./Title";
 
 const BookList = () => {
     const getBook = (id) => {
@@ -13,11 +14,15 @@ const BookList = () => {
             console.log("Book not found")
         }
     }
-    return (<section className={'booklist'}>
-        {books.map((book, index) => {
-            return <Book getBook={getBook} {...book} number={index} key={book.id}/>
-        })}
-    </section>)
+    return <>
+        <Title/>
+        <section className={'booklist'}>
+            {books.map((book, index) => {
+                return <Book getBook={getBook} {...book} number={index} key={book.id}/>
+            })}
+        </section>
+    </>
+
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
