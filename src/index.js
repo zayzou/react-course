@@ -22,5 +22,3 @@ const BookList = () => {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<BookList/>)
-
-

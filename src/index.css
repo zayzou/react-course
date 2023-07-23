@@ -27,6 +27,7 @@ body {
 }
 
 .book {
+
     background: #fff;
     border-radius: 1rem;
     padding: 2rem;
@@ -68,8 +69,8 @@ h1 {
     position: relative;
     top: -32px;
     left: -31px;
-    width: min-content;
+    width: max-content;
     background-color: brown;
     color: white;
-    border-radius: 1rem 0 0 0;
+    border-top-left-radius: 1rem ;
 }
